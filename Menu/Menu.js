@@ -37,7 +37,6 @@ function ArticleCard(theArray) {
   // Assignments 
   const Menu = document.createElement('div'),
         ul = document.createElement('ul'),
-        menuItems = document.createElement('li'),
         menuButton = document.querySelector('.header img');
         // menuItem1 = document.createElement('li'), 
         // menuItem2 = document.createElement('li'),
@@ -48,8 +47,11 @@ function ArticleCard(theArray) {
 
 
   // Text Content
+
 theArray.forEach(function(item){
-    menuItems.textContent = item;
+  const menuItem = document.createElement('li');
+   menuItem.textContent = item;
+   ul.append(menuItem);
 });
   //  menuItem1.textContent = array[0];
   //  menuItem2.textContent = array[1];
@@ -70,7 +72,6 @@ theArray.forEach(function(item){
 
    // format
    Menu.append(ul);
-   ul.append(menuItems);
    
    return Menu;
  } // Article Card Function Ends Here
