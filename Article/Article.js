@@ -112,3 +112,52 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+function ArticleCard(object) {
+  // Assignments 
+  const newCard = document.createElement('div'),
+        date = document.createElement('p'),
+        par1 = document.createElement('p'), 
+        par2 = document.createElement('p'),
+        par3 = document.createElement('p'),
+        button = document.createElement('span'),
+        title = document.createElement('h2'),
+        toggle = document.querySelectorAll('.expandButton');
+
+   
+  // Text Content
+   title.textContent = object.title;
+   date.textContent = object.date;
+   par1.textContent = object.firstParagraph;
+   par2.textContent = object.secondParagraph;
+   par3.textContent = object.thirdParagraph;
+
+   
+   // class assignment
+   date.classList.add('date');
+   button.classList.add('expandButton');
+   newCard.classList.add('article');
+
+   //event Listeners
+  //  toggle.addEventListener('click', () => {
+  //   // 1. toggle hide-btn on BOTH buttons
+  //   newCard.classList.toggle('article-open');
+  // });
+   
+
+   // format
+   newCard.append(title);
+   newCard.append(date);
+   newCard.append(par1);
+   newCard.append(par2);
+   newCard.append(par3);
+   newCard.append(button);
+   
+   return newCard;
+ } // Article Card Function Ends Here
+
+let underArticles = data.map(ArticleCard);
+
+underArticles.forEach(function(item){
+let articles = document.querySelector('.articles');
+articles.append(item);
+});
