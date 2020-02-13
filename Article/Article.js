@@ -120,8 +120,8 @@ function ArticleCard(object) {
         par2 = document.createElement('p'),
         par3 = document.createElement('p'),
         button = document.createElement('span'),
-        title = document.createElement('h2'),
-        toggle = document.querySelectorAll('.expandButton');
+        title = document.createElement('h2');
+
 
    
   // Text Content
@@ -138,10 +138,9 @@ function ArticleCard(object) {
    newCard.classList.add('article');
 
    //event Listeners
-  //  toggle.addEventListener('click', () => {
-  //   // 1. toggle hide-btn on BOTH buttons
-  //   newCard.classList.toggle('article-open');
-  // });
+   button.addEventListener('click', () => {
+    newCard.classList.toggle('article-open');
+  });
    
 
    // format

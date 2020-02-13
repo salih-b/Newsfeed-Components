@@ -33,3 +33,47 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+function ArticleCard(theArray) {
+  // Assignments 
+  const Menu = document.createElement('div'),
+        ul = document.createElement('ul'),
+        menuItems = document.createElement('li'),
+        menuButton = document.querySelector('.header img');
+        // menuItem1 = document.createElement('li'), 
+        // menuItem2 = document.createElement('li'),
+        // menuItem3 = document.createElement('li'),
+        // menuItem4 = document.createElement('li'),
+        // menuItem5 = document.createElement('li'),
+        // menuItem6 = document.querySelectorAll('li');
+
+
+  // Text Content
+theArray.forEach(function(item){
+    menuItems.textContent = item;
+});
+  //  menuItem1.textContent = array[0];
+  //  menuItem2.textContent = array[1];
+  //  menuItem3.textContent = array[2];
+  //  menuItem4.textContent = array[3];
+  //  menuItem5.textContent = array[4];
+  //  menuItem6.textContent = array[5];
+
+
+   
+   // class assignment
+   Menu.classList.add('menu');
+
+   //event Listeners
+   menuButton.addEventListener('click', () => {
+    Menu.classList.toggle('menu--open');
+  });
+
+   // format
+   Menu.append(ul);
+   ul.append(menuItems);
+   
+   return Menu;
+ } // Article Card Function Ends Here
+
+ let theHeader = document.querySelector('.header');
+ theHeader.append(ArticleCard(menuItems));
