@@ -160,3 +160,7 @@ underArticles.forEach(function(item){
 let articles = document.querySelector('.articles');
 articles.append(item);
 });
+let articleStyle = document.querySelectorAll('.article');
+articleStyle.forEach(element => {
+  element.style.height = 'fit-content';
+});
